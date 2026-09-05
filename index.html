@@ -1,0 +1,639 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sur Sangeet Online Dance Academy | Kathak, Semi Classical &amp; Bollywood Dance Classes</title>
+<meta name="description" content="Live online Kathak, Semi Classical, Bollywood Kathak and Bollywood dance classes taught by experienced instructors, for all age groups worldwide.">
+
+<!-- Favicon -->
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+
+<!-- Open Graph / social sharing preview (so the logo shows up when the site is shared or found in search) -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="Sur Sangeet Online Dance Academy">
+<meta property="og:description" content="Live online Kathak, Semi Classical, Bollywood Kathak and Bollywood dance classes for all age groups.">
+<meta property="og:image" content="og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Sur Sangeet Online Dance Academy">
+<meta name="twitter:description" content="Live online Kathak, Semi Classical, Bollywood Kathak and Bollywood dance classes for all age groups.">
+<meta name="twitter:image" content="og-image.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;0,800;1,600&family=Lato:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --cream:#ffffff;
+    --peach:#fdf1e6;
+    --dark:#2b1710;
+    --brown:#3a1f13;
+    --orange:#e0672f;
+    --text-navy:#2b3a55;
+    --text-muted:#5b6b85;
+    --line:#e7e0d8;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:'Lato', sans-serif;
+    color:var(--text-navy);
+    background:var(--cream);
+    line-height:1.65;
+    overflow-x:hidden;
+  }
+  h1,h2,h3,h4{
+    font-family:'Playfair Display', serif;
+    color:var(--dark);
+    font-weight:700;
+    line-height:1.15;
+  }
+  a{text-decoration:none;color:inherit;}
+  ul{list-style:none;}
+  img{max-width:100%;display:block;}
+  .container{max-width:1300px;margin:0 auto;padding:0 40px;}
+  section{padding:90px 0;}
+
+  /* ===== HEADER ===== */
+  header{
+    position:sticky;top:0;left:0;right:0;z-index:1000;
+    background:rgba(255,255,255,0.97);
+    backdrop-filter:blur(6px);
+    border-bottom:1px solid var(--line);
+  }
+  .nav-wrap{
+    display:flex;align-items:center;justify-content:space-between;
+    max-width:1300px;margin:0 auto;padding:14px 40px;
+  }
+  .logo{display:flex;align-items:center;gap:12px;}
+  .logo img{width:46px;height:46px;flex-shrink:0;object-fit:contain;}
+  .logo-text{display:flex;flex-direction:column;line-height:1;}
+  .logo-text .name{font-family:'Playfair Display',serif;font-size:1.55rem;font-weight:700;color:var(--dark);}
+  .logo-text .name span{color:var(--orange);}
+  .logo-text .tag{font-size:.6rem;letter-spacing:2.5px;color:#8a7c6c;margin-top:4px;font-weight:600;}
+
+  nav.main-nav ul{display:flex;align-items:center;gap:30px;}
+  nav.main-nav a.top-link{
+    font-size:.95rem;color:var(--dark);font-weight:600;
+    display:flex;align-items:center;gap:5px;
+    padding:8px 2px;position:relative;
+  }
+  nav.main-nav li.active > a.top-link{color:var(--orange);}
+  nav.main-nav a.top-link .chev{width:9px;height:9px;border-right:2px solid currentColor;border-bottom:2px solid currentColor;transform:rotate(45deg);margin-top:-3px;transition:transform .2s;}
+  nav.main-nav li{position:relative;}
+  .dropdown{
+    position:absolute;top:100%;left:0;background:#fff;min-width:220px;
+    box-shadow:0 18px 40px rgba(43,23,16,.14);border-radius:10px;
+    padding:10px;opacity:0;visibility:hidden;transform:translateY(8px);
+    transition:all .18s ease;border:1px solid var(--line);
+  }
+  nav.main-nav li:hover .dropdown{opacity:1;visibility:visible;transform:translateY(0);}
+  nav.main-nav li:hover .chev{transform:rotate(225deg);}
+  .dropdown a{display:block;padding:9px 12px;border-radius:6px;font-size:.88rem;color:var(--text-navy);}
+  .dropdown a:hover{background:var(--peach);color:var(--orange);}
+  .burger{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;}
+  .burger span{width:26px;height:2px;background:var(--dark);}
+  .trial-btn{
+    background:var(--orange);color:#fff;font-weight:700;font-size:.88rem;
+    padding:11px 22px;border-radius:6px;white-space:nowrap;transition:background .2s;
+  }
+  .trial-btn:hover{background:var(--dark);}
+  @media(max-width:1000px){ .trial-btn{display:none;} }
+
+  /* ===== HERO ===== */
+  .hero{
+    position:relative;min-height:92vh;display:flex;align-items:center;justify-content:center;
+    text-align:center;color:#fff;overflow:hidden;
+  }
+  .hero-bg{
+    position:absolute;inset:0;background-size:cover;background-position:center 20%;
+    background-image:url('stage-krishna-radha.jpeg');
+    filter:saturate(1.05);
+  }
+  .hero-bg::after{
+    content:'';position:absolute;inset:0;
+    background:linear-gradient(180deg, rgba(30,16,10,.55) 0%, rgba(30,16,10,.72) 55%, rgba(30,16,10,.86) 100%);
+  }
+  .hero-inner{position:relative;z-index:2;max-width:880px;padding:0 24px;}
+  .hero-inner h1{
+    font-size:3.4rem;color:#fff;margin-bottom:26px;letter-spacing:.2px;
+    text-shadow:0 4px 30px rgba(0,0,0,.35);
+  }
+  .hero-inner p{
+    font-family:'Playfair Display',serif;font-weight:600;font-style:italic;
+    font-size:1.18rem;color:#f2e6da;max-width:680px;margin:0 auto;
+  }
+  .scroll-cue{margin-top:46px;display:inline-block;color:var(--orange);animation:bob 1.8s infinite;}
+  .scroll-cue svg{width:26px;height:26px;}
+  @keyframes bob{0%,100%{transform:translateY(0);}50%{transform:translateY(8px);}}
+
+  /* ===== SECTION NUMBER HEADINGS ===== */
+  .num-tag{
+    font-family:'Playfair Display',serif;font-weight:800;color:#efe6da;
+    font-size:5.2rem;line-height:1;margin-bottom:-30px;user-select:none;
+  }
+  .section-heading{font-size:2.6rem;margin-bottom:18px;}
+
+  /* ===== ABOUT ===== */
+  .about-grid{display:grid;grid-template-columns:1fr 1.15fr;gap:64px;align-items:start;}
+  .about-images{display:flex;flex-direction:column;gap:18px;}
+  .about-images img{width:100%;object-fit:cover;}
+  .about-images .img-main{height:520px;border-radius:2px;}
+  .about-images .img-sub{height:180px;border-radius:2px;}
+  .about-copy h3{font-size:1.45rem;margin-bottom:22px;font-weight:600;max-width:520px;}
+  .about-copy p{color:var(--text-navy);margin-bottom:18px;font-size:1.02rem;}
+
+  /* ===== FEATURED CLASSES ===== */
+  .featured-intro{max-width:640px;margin-bottom:56px;}
+  .featured-intro p{font-size:1.08rem;color:var(--text-navy);}
+  .class-grid{
+    display:grid;grid-template-columns:repeat(4,1fr);
+  }
+  .class-card{
+    padding:36px 30px;border-right:1px solid var(--line);border-top:1px solid var(--line);
+  }
+  .class-card:nth-child(4n){border-right:none;}
+  .class-grid .class-card:nth-child(-n+4){border-top:none;}
+  .class-card svg{width:100px;height:130px;color:#3a2a1c;margin-bottom:22px;}
+  .class-card img.class-img{width:100%;height:200px;object-fit:cover;object-position:center 18%;border-radius:12px;margin-bottom:22px;box-shadow:0 14px 28px rgba(43,23,16,.14);}
+  .class-card h4{font-size:1.28rem;margin-bottom:10px;}
+  .class-card .underline{width:38px;height:3px;background:var(--dark);margin-bottom:16px;}
+  .class-card p{font-size:.94rem;color:var(--text-muted);}
+
+  /* ===== INSTRUCTORS ===== */
+  .instructor-grid{
+    display:grid;grid-template-columns:repeat(3,1fr);gap:36px;margin-top:8px;
+  }
+  .instructor-card{
+    background:#fff;border:1px solid var(--line);border-radius:14px;overflow:hidden;
+    box-shadow:0 14px 30px rgba(43,23,16,.08);text-align:left;
+  }
+  .instructor-card img{width:100%;height:340px;object-fit:cover;object-position:center 15%;}
+  .instructor-card .instructor-info{padding:22px 24px 26px;}
+  .instructor-card h4{font-size:1.22rem;margin-bottom:4px;color:var(--dark);}
+  .instructor-card .role{font-size:.78rem;letter-spacing:1.3px;color:var(--orange);font-weight:700;text-transform:uppercase;margin-bottom:10px;}
+  .instructor-card p{font-size:.92rem;color:var(--text-muted);}
+  @media(max-width:900px){ .instructor-grid{grid-template-columns:1fr;} }
+
+  /* ===== LEARNING PROGRAMS ===== */
+  .programs-grid{display:grid;grid-template-columns:.95fr 1.3fr;gap:64px;align-items:start;}
+  .programs-grid img{width:100%;height:640px;object-fit:cover;border-radius:2px;}
+  .accordion-item{border-bottom:1px solid var(--line);}
+  .accordion-item:first-child{border-top:1px solid var(--line);}
+  .accordion-head{
+    display:flex;align-items:center;justify-content:space-between;
+    padding:22px 4px;cursor:pointer;font-family:'Playfair Display',serif;
+    font-weight:600;font-size:1.18rem;color:var(--dark);
+  }
+  .accordion-head .plus{
+    width:22px;height:22px;position:relative;flex-shrink:0;margin-right:16px;color:var(--orange);
+  }
+  .accordion-head .plus::before,.accordion-head .plus::after{
+    content:'';position:absolute;background:var(--orange);top:50%;left:50%;transform:translate(-50%,-50%);
+  }
+  .accordion-head .plus::before{width:16px;height:2.4px;}
+  .accordion-head .plus::after{width:2.4px;height:16px;transition:transform .25s;}
+  .accordion-item.open .plus::after{transform:translate(-50%,-50%) rotate(90deg) scaleX(0);}
+  .accordion-head .label{display:flex;align-items:center;flex:1;}
+  .accordion-body{max-height:0;overflow:hidden;transition:max-height .3s ease;}
+  .accordion-item.open .accordion-body{max-height:220px;}
+  .accordion-body p{padding:0 4px 24px 38px;color:var(--text-muted);font-size:.96rem;font-family:'Lato',sans-serif;font-weight:400;}
+
+  /* ===== TESTIMONIALS ===== */
+  .testimonials{background:var(--peach);}
+  .stars{color:var(--orange);font-size:1.1rem;letter-spacing:3px;margin-bottom:16px;}
+  .testi-grid{display:grid;grid-template-columns:1fr 1.3fr 1fr;gap:50px;text-align:center;margin-bottom:70px;}
+  .testi-grid .center .badge{font-family:'Playfair Display',serif;font-weight:700;font-style:italic;color:var(--dark);margin-bottom:14px;}
+  .testi-grid blockquote{font-family:'Playfair Display',serif;font-weight:600;font-style:italic;font-size:1.15rem;color:var(--dark);margin-bottom:18px;}
+  .testi-grid .center blockquote{font-size:1.55rem;}
+  .testi-grid cite{font-style:normal;font-weight:700;color:var(--orange);font-size:.92rem;}
+  .stats-row{
+    display:grid;grid-template-columns:repeat(4,1fr);text-align:center;
+    padding-top:44px;border-top:2px solid #d8c7b3;border-bottom:2px solid #d8c7b3;
+    position:relative;
+  }
+  .stats-row{padding-bottom:44px;}
+  .stats-row .num{font-family:'Playfair Display',serif;font-weight:800;font-size:2.8rem;color:var(--dark);}
+  .stats-row .lbl{color:var(--text-muted);font-size:.98rem;margin-top:6px;}
+
+  /* ===== STUDENTS ACROSS WORLD ===== */
+  .students-intro{max-width:760px;margin-bottom:44px;}
+  .carousel-wrap{position:relative;}
+  .carousel-track{display:grid;grid-template-columns:1fr 1fr;gap:0;overflow:hidden;border-radius:2px;}
+  .carousel-track img{width:100%;height:380px;object-fit:cover;}
+  .dots{display:flex;justify-content:center;gap:10px;margin-top:26px;}
+  .dots button{width:9px;height:9px;border-radius:50%;border:none;background:#d8cdc0;cursor:pointer;padding:0;}
+  .dots button.active{background:var(--dark);width:22px;border-radius:5px;transition:all .2s;}
+
+  /* ===== ENQUIRE FORM ===== */
+  .enquire{background:var(--peach);}
+  .enquire-grid{display:grid;grid-template-columns:1.15fr 1fr;gap:60px;align-items:start;}
+  .form-title{font-size:2.3rem;margin-bottom:8px;}
+  .form-sub{color:var(--text-muted);margin-bottom:32px;}
+  form{display:grid;gap:20px;}
+  .form-row{display:grid;grid-template-columns:1fr 1fr;gap:18px;}
+  .field label{display:block;font-size:.88rem;font-weight:700;color:var(--dark);margin-bottom:8px;}
+  .field label .req{color:var(--orange);}
+  .field input,.field select,.field textarea{
+    width:100%;padding:13px 15px;border:1px solid #e2d5c5;border-radius:6px;
+    background:#fff;font-family:'Lato',sans-serif;font-size:.95rem;color:var(--text-navy);
+  }
+  .field input:focus,.field select:focus,.field textarea:focus{outline:2px solid var(--orange);outline-offset:1px;}
+  .field textarea{resize:vertical;min-height:110px;}
+  .submit-btn{
+    background:var(--dark);color:#fff;border:none;padding:15px 40px;
+    font-weight:700;font-size:1rem;border-radius:6px;cursor:pointer;justify-self:start;
+    transition:background .2s;
+  }
+  .submit-btn:hover{background:var(--orange);}
+  .journey-copy h2{font-size:2.3rem;margin-bottom:22px;}
+  .journey-copy p{color:var(--text-navy);font-size:1.05rem;}
+
+  /* ===== FOOTER ===== */
+  footer{padding:64px 0 0;}
+  .footer-top{display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:40px;padding-bottom:44px;}
+  .footer-logo{display:flex;align-items:center;gap:12px;margin-bottom:6px;}
+  .footer-logo img{width:44px;height:44px;object-fit:contain;}
+  .foot-col h5{font-family:'Playfair Display',serif;font-size:1.05rem;color:var(--dark);margin-bottom:14px;}
+  .foot-col p{font-size:.95rem;color:var(--text-navy);margin-bottom:4px;}
+  .foot-col a.wa{color:var(--orange);font-weight:700;}
+  .social-row{display:flex;gap:14px;margin-top:18px;}
+  .social-row a{
+    width:36px;height:36px;border-radius:50%;background:var(--dark);color:#fff;
+    display:flex;align-items:center;justify-content:center;transition:background .2s;
+  }
+  .social-row a:hover{background:var(--orange);}
+  .social-row svg{width:16px;height:16px;}
+  .footer-bottom{border-top:1px solid var(--line);text-align:center;padding:22px 0;font-size:.85rem;color:var(--text-muted);}
+
+  .wa-float{
+    position:fixed;bottom:26px;right:26px;width:58px;height:58px;background:#25D366;
+    border-radius:50%;display:flex;align-items:center;justify-content:center;z-index:999;
+    box-shadow:0 8px 24px rgba(0,0,0,.25);
+  }
+  .wa-float svg{width:30px;height:30px;fill:#fff;}
+
+  @media(max-width:1000px){
+    .about-grid,.programs-grid,.enquire-grid{grid-template-columns:1fr;}
+    .programs-grid img,.about-images .img-main{height:360px;}
+    .class-grid{grid-template-columns:repeat(2,1fr);}
+    .class-card:nth-child(2n){border-right:none;}
+    .class-card:nth-child(4n){border-right:1px solid var(--line);}
+    .class-grid .class-card:nth-child(-n+4){border-top:1px solid var(--line);}
+    .class-grid .class-card:nth-child(-n+2){border-top:none;}
+    .testi-grid{grid-template-columns:1fr;gap:36px;}
+    .stats-row{grid-template-columns:repeat(2,1fr);row-gap:30px;}
+    .form-row{grid-template-columns:1fr;}
+    .footer-top{grid-template-columns:1fr;}
+    .carousel-track{grid-template-columns:1fr;}
+    nav.main-nav{display:none;}
+    .burger{display:flex;}
+    .hero-inner h1{font-size:2.3rem;}
+  }
+</style>
+</head>
+<body>
+
+<!-- ================= HEADER ================= -->
+<header>
+  <div class="nav-wrap">
+    <a href="#home" class="logo">
+      <img src="logo.png" alt="Sur Sangeet Academy logo">
+      <div class="logo-text">
+        <span class="name">Sur <span>Sangeet</span></span>
+        <span class="tag">ONLINE DANCE ACADEMY</span>
+      </div>
+    </a>
+    <nav class="main-nav">
+      <ul>
+        <li class="active"><a href="#home" class="top-link">Home</a></li>
+        <li><a href="#about" class="top-link">About</a></li>
+        <li>
+          <a href="#classes" class="top-link">Classes <span class="chev"></span></a>
+          <div class="dropdown">
+            <a href="#classes">Kathak</a>
+            <a href="#classes">Semi Classical</a>
+            <a href="#classes">Bollywood Kathak</a>
+            <a href="#classes">Bollywood</a>
+          </div>
+        </li>
+        <li><a href="#programs" class="top-link">Programs</a></li>
+        <li><a href="#enquire" class="top-link">Contact</a></li>
+      </ul>
+    </nav>
+    <a href="#enquire" class="trial-btn">Book Free Trial</a>
+    <button class="burger" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<!-- ================= HERO ================= -->
+<section id="home" class="hero" style="padding:0;">
+  <div class="hero-bg"></div>
+  <div class="hero-inner">
+    <h1>Learn Kathak, Semi Classical &amp; Bollywood Dance Online</h1>
+    <p>Live online Kathak, Semi Classical, Bollywood Kathak and Bollywood dance classes for all age groups, at a time that works for you.</p>
+    <a href="#enquire" class="submit-btn" style="display:inline-block;margin-top:34px;">Book a Free Trial Class</a><br>
+    <a href="#about" class="scroll-cue">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><polyline points="6 9 12 15 18 9"/></svg>
+    </a>
+  </div>
+</section>
+
+<!-- ================= ABOUT ================= -->
+<section id="about">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-images">
+        <img class="img-main" src="durga-costume.jpeg" alt="Dancer in an elaborate stage costume">
+        <img class="img-sub" src="group-award-ceremony.jpeg" alt="Students with award certificates on stage">
+      </div>
+      <div class="about-copy">
+        <div class="num-tag">01</div>
+        <h2 class="section-heading">About</h2>
+        <h3>Learn Dance Online, At Your Own Pace</h3>
+        <p>Sur Sangeet Online Dance Academy is dedicated to teaching Kathak, Semi Classical, Bollywood Kathak, and Bollywood dance through live, personalized online classes.</p>
+        <p>We welcome students of all age groups, from young beginners to adults, and offer flexible batch timings so you can learn at a time that suits you &mdash; from anywhere in the world.</p>
+        <p>Every class is conducted live online with individual attention, helping students build technique, expression, and confidence, whether they are just starting out or looking to refine their craft.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FEATURED CLASSES ================= -->
+<section id="classes" style="padding-top:0;">
+  <div class="container">
+    <div class="num-tag">02</div>
+    <h2 class="section-heading">Our Dance Classes</h2>
+    <div class="featured-intro">
+      <p>Live online dance classes for all age groups, at any time that works for you.</p>
+    </div>
+
+    <div class="class-grid">
+      <div class="class-card">
+        <img class="class-img" src="kathak-pose.jpeg" alt="Kathak dancer striking a graceful pose">
+        <h4>Kathak Classes</h4>
+        <div class="underline"></div>
+        <p>Master the elegance and rhythm of Kathak through live online classes. Build technique, expression, and stage confidence at your own pace, for all age groups.</p>
+      </div>
+      <div class="class-card">
+        <img class="class-img" src="semi-classical-portrait.jpeg" alt="Semi classical dancer in an expressive pose">
+        <h4>Semi Classical</h4>
+        <div class="underline"></div>
+        <p>A graceful blend of classical dance elements taught through live online classes, with personalized guidance for beginners and improvers alike.</p>
+      </div>
+      <div class="class-card">
+        <img class="class-img" src="durga-costume.jpeg" alt="Dancer performing a Bollywood Kathak fusion move">
+        <h4>Bollywood Kathak</h4>
+        <div class="underline"></div>
+        <p>A lively fusion of Kathak footwork and Bollywood energy, taught live online with choreography that builds rhythm, flair, and performance confidence.</p>
+      </div>
+      <div class="class-card">
+        <img class="class-img" src="group-krishna-leela.jpeg" alt="Energetic Bollywood dance performance">
+        <h4>Bollywood Dance</h4>
+        <div class="underline"></div>
+        <p>Experience the joy of Bollywood Dance through live online classes. Learn exciting choreography, expressive movements, and energetic performance skills.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= LEARNING PROGRAMS ================= -->
+<section id="programs">
+  <div class="container">
+    <div class="programs-grid">
+      <img src="stage-krishna-radha.jpeg" alt="Students performing on stage in classical costume">
+      <div>
+        <div class="num-tag">03</div>
+        <h2 class="section-heading" style="margin-bottom:34px;">Class Details</h2>
+        <div class="accordion">
+          <div class="accordion-item open">
+            <div class="accordion-head"><span class="label"><span class="plus"></span>Kathak</span></div>
+            <div class="accordion-body"><p>Live online Kathak classes covering footwork, spins, and expression, taught step by step.</p></div>
+          </div>
+          <div class="accordion-item">
+            <div class="accordion-head"><span class="label"><span class="plus"></span>Semi Classical</span></div>
+            <div class="accordion-body"><p>A graceful, classical-inspired style taught live online with personalized guidance.</p></div>
+          </div>
+          <div class="accordion-item">
+            <div class="accordion-head"><span class="label"><span class="plus"></span>Bollywood Kathak</span></div>
+            <div class="accordion-body"><p>A fun fusion of Kathak technique and Bollywood choreography, live online.</p></div>
+          </div>
+          <div class="accordion-item">
+            <div class="accordion-head"><span class="label"><span class="plus"></span>Bollywood</span></div>
+            <div class="accordion-body"><p>High-energy Bollywood choreography classes for all levels, taught live online.</p></div>
+          </div>
+          <div class="accordion-item">
+            <div class="accordion-head"><span class="label"><span class="plus"></span>Age Groups</span></div>
+            <div class="accordion-body"><p>Classes are open to all age groups &mdash; from children to adults.</p></div>
+          </div>
+          <div class="accordion-item">
+            <div class="accordion-head"><span class="label"><span class="plus"></span>Batch Timings</span></div>
+            <div class="accordion-body"><p>Flexible timings, any time that works for you &mdash; batches are scheduled around your availability.</p></div>
+          </div>
+          <div class="accordion-item">
+            <div class="accordion-head"><span class="label"><span class="plus"></span>Free Trial Class</span></div>
+            <div class="accordion-body"><p>Book a free trial class before enrolling, so you can experience a live session first.</p></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= WHY CHOOSE US ================= -->
+<section class="testimonials">
+  <div class="container">
+    <div class="stats-row" style="border-top:none;padding-top:0;">
+      <div><div class="num" style="font-size:1.6rem;">All Age Groups</div><div class="lbl">Kids, teens &amp; adults welcome</div></div>
+      <div><div class="num" style="font-size:1.6rem;">Any Time</div><div class="lbl">Flexible batch timings</div></div>
+      <div><div class="num" style="font-size:1.6rem;">Live Online</div><div class="lbl">Personal, interactive classes</div></div>
+      <div><div class="num" style="font-size:1.6rem;">Free Trial</div><div class="lbl">Try a class before you enrol</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= STUDENTS ACROSS THE WORLD ================= -->
+<section id="students">
+  <div class="container">
+    <div class="num-tag">04</div>
+    <h2 class="section-heading">Learn From Anywhere</h2>
+    <div class="students-intro">
+      <p>Our live online classes make quality dance education accessible from wherever you are, at a time that fits your schedule. Learn, practice, and perform in a supportive online environment.</p>
+    </div>
+    <div class="carousel-wrap">
+      <div class="carousel-track" id="carouselTrack">
+        <img src="stage-krishna-radha.jpeg" alt="Students performing Krishna Leela on stage">
+        <img src="group-award-ceremony.jpeg" alt="Students with award certificates on stage">
+      </div>
+      <div class="dots" id="carouselDots"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= INSTRUCTOR ================= -->
+<section id="instructor" style="padding-top:0;">
+  <div class="container" style="text-align:center;">
+    <div class="num-tag">05</div>
+    <h2 class="section-heading">Meet Your Instructors</h2>
+    <p style="max-width:620px;margin:0 auto 34px;color:var(--text-muted);">Learn from experienced instructors who bring years of stage performance and teaching experience to every live class.</p>
+    <div class="instructor-grid">
+      <div class="instructor-card">
+        <img src="kathak-pose.jpeg" alt="Deepshikha Sinha, Director and Kathak &amp; Classical instructor">
+        <div class="instructor-info">
+          <h4>Deepshikha Sinha</h4>
+          <div class="role">Director &middot; Kathak &amp; Classical</div>
+          <p>Director of Sur Sangeet Academy, teaching Kathak and Classical dance with a focus on authentic technique and expression.</p>
+        </div>
+      </div>
+      <div class="instructor-card">
+        <img src="faculty-sakshi.jpeg" alt="Sakshi, Semi Classical, Kathak and Bollywood instructor">
+        <div class="instructor-info">
+          <h4>Sakshi</h4>
+          <div class="role">Semi Classical &middot; Kathak &middot; Bollywood</div>
+          <p>Teaches Semi Classical, Kathak, and Bollywood dance, guiding students from foundational steps to confident stage performance.</p>
+        </div>
+      </div>
+      <div class="instructor-card">
+        <img src="faculty-karthik.jpeg" alt="Karthik Vishwas, Bollywood Dance instructor">
+        <div class="instructor-info">
+          <h4>Karthik Vishwas</h4>
+          <div class="role">Bollywood Dance</div>
+          <p>Brings high-energy choreography and performance skills to Bollywood Dance classes for students of all levels.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= ENQUIRE FORM ================= -->
+<section id="enquire" class="enquire">
+  <div class="container">
+    <div class="enquire-grid">
+      <div class="form-card">
+        <h2 class="form-title">Book a Free Trial Class</h2>
+        <p class="form-sub">Fill in the form and we'll get back to you on WhatsApp to schedule your trial</p>
+        <form onsubmit="return handleSubmit(event)">
+          <div class="form-row">
+            <div class="field"><label>First Name <span class="req">*</span></label><input type="text" placeholder="Enter your first name" required></div>
+            <div class="field"><label>Last Name <span class="req">*</span></label><input type="text" placeholder="Enter your last name" required></div>
+          </div>
+          <div class="form-row">
+            <div class="field"><label>Age <span class="req">*</span></label><input type="text" placeholder="Student's age" required></div>
+            <div class="field"><label>WhatsApp Number <span class="req">*</span></label><input type="tel" placeholder="Mobile / WhatsApp number" required></div>
+          </div>
+          <div class="field"><label>Email</label><input type="email" placeholder="email"></div>
+          <div class="field">
+            <label>Dance Style <span class="req">*</span></label>
+            <select required>
+              <option value="" selected disabled>Select a dance style</option>
+              <option>Kathak</option>
+              <option>Semi Classical</option>
+              <option>Bollywood Kathak</option>
+              <option>Bollywood</option>
+            </select>
+          </div>
+          <div class="field"><label>Preferred Time</label><input type="text" placeholder="e.g. Weekday evenings, weekend mornings"></div>
+          <div class="field">
+            <label>Questions/Comments</label>
+            <textarea placeholder="Tell us about your experience level or any questions you may have."></textarea>
+          </div>
+          <button type="submit" class="submit-btn">Book Free Trial</button>
+        </form>
+      </div>
+      <div class="journey-copy">
+        <div class="num-tag">05</div>
+        <h2>Start Your Learning Journey</h2>
+        <p>Fill in the form and our team will get in touch on WhatsApp to schedule your free trial class and share batch timings for the dance style you're interested in.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FOOTER ================= -->
+<footer>
+  <div class="container">
+    <div class="footer-top">
+      <div>
+        <a href="#home" class="footer-logo">
+          <img src="logo.png" alt="Sur Sangeet Academy logo">
+          <div class="logo-text">
+            <span class="name">Sur <span>Sangeet</span></span>
+            <span class="tag">ONLINE DANCE ACADEMY</span>
+          </div>
+        </a>
+      </div>
+      <div class="foot-col">
+        <h5>WhatsApp</h5>
+        <p><a class="wa" href="https://wa.me/919919111167">+91 99191 11167</a></p>
+      </div>
+      <div class="foot-col">
+        <h5>Email</h5>
+        <p><a href="mailto:sursangeetonlinedanceacademy@gmail.com">sursangeetonlinedanceacademy@gmail.com</a></p>
+      </div>
+    </div>
+    <div class="footer-bottom">Copyright &copy; 2026 Sur Sangeet Online Dance Academy</div>
+  </div>
+</footer>
+
+<a class="wa-float" href="https://wa.me/919919111167" aria-label="Chat on WhatsApp" target="_blank">
+  <svg viewBox="0 0 32 32"><path d="M16 3C9 3 3.3 8.6 3.3 15.5c0 2.5.7 4.9 2 7L3 29l6.7-2.2c2 .9 4.1 1.3 6.3 1.3 7 0 12.7-5.6 12.7-12.5S23 3 16 3zm0 22.7c-2 0-4-.5-5.7-1.5l-.4-.2-4 1.3 1.3-3.9-.3-.4c-1.1-1.7-1.7-3.7-1.7-5.7 0-5.7 4.7-10.3 10.5-10.3S26.5 9.7 26.5 15.4 21.8 25.7 16 25.7zm5.8-7.7c-.3-.2-1.9-.9-2.2-1-.3-.1-.5-.2-.7.2-.2.3-.8 1-1 1.2-.2.2-.4.2-.7.1-.3-.2-1.4-.5-2.6-1.6-1-.9-1.6-2-1.8-2.3-.2-.3 0-.5.1-.6.1-.1.3-.4.4-.5.1-.2.2-.3.3-.5.1-.2 0-.4 0-.6 0-.2-.7-1.7-1-2.3-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.3 5.2 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.9-.8 2.1-1.5.3-.7.3-1.4.2-1.5-.1-.2-.3-.3-.6-.4z"/></svg>
+</a>
+
+<script>
+  // Accordion
+  document.querySelectorAll('.accordion-head').forEach(head=>{
+    head.addEventListener('click', ()=>{
+      const item = head.parentElement;
+      const wasOpen = item.classList.contains('open');
+      item.parentElement.querySelectorAll('.accordion-item').forEach(i=>i.classList.remove('open'));
+      if(!wasOpen) item.classList.add('open');
+    });
+  });
+
+  // Carousel (2 pairs of images, cycles slides)
+  const slides = [
+    ["stage-krishna-radha.jpeg","group-award-ceremony.jpeg"],
+    ["group-krishna-leela.jpeg","semi-classical-portrait.jpeg"]
+  ];
+  const track = document.getElementById('carouselTrack');
+  const dotsWrap = document.getElementById('carouselDots');
+  let current = 0;
+  slides.forEach((_,i)=>{
+    const b = document.createElement('button');
+    if(i===0) b.classList.add('active');
+    b.addEventListener('click', ()=> setSlide(i));
+    dotsWrap.appendChild(b);
+  });
+  function setSlide(i){
+    current = i;
+    track.innerHTML = '';
+    slides[i].forEach(src=>{
+      const img = document.createElement('img');
+      img.src = src;
+      track.appendChild(img);
+    });
+    [...dotsWrap.children].forEach((d,idx)=>d.classList.toggle('active', idx===i));
+  }
+  setInterval(()=> setSlide((current+1)%slides.length), 5000);
+
+  // Mobile burger toggle (simple)
+  document.querySelector('.burger').addEventListener('click', ()=>{
+    const nav = document.querySelector('.main-nav');
+    nav.style.display = nav.style.display === 'block' ? 'none' : 'block';
+    if(nav.style.display === 'block'){
+      nav.style.position='absolute'; nav.style.top='100%'; nav.style.left='0'; nav.style.right='0';
+      nav.style.background='#fff'; nav.style.padding='20px 40px'; nav.style.borderTop='1px solid #e7e0d8';
+      nav.querySelector('ul').style.flexDirection='column'; nav.querySelector('ul').style.alignItems='flex-start'; nav.querySelector('ul').style.gap='16px';
+    }
+  });
+
+  function handleSubmit(e){
+    e.preventDefault();
+    alert('Thank you! We will contact you on WhatsApp shortly to schedule your free trial class.');
+    e.target.reset();
+    return false;
+  }
+</script>
+</body>
+</html>
